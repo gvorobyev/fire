@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESONANCE OF MATTER | Art Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Cover Section */
+        .cover {
+            height: 100vh;
+            background: linear-gradient(45deg, #0a0a0a 0%, #2d2d2d 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .cover-image {
+            width: 300px;
+            height: 400px;
+            background: #2a2a2a;
+            margin-bottom: 2rem;
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .cover-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cover-title {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .cover-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            animation: bounce 2s infinite;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Introduction Section */
+        .introduction {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .intro-image {
+            width: 100%;
+            height: 500px;
+            background: #2a2a2a;
+            border: 1px solid #404040;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .intro-text {
+            padding: 2rem;
+        }
+
+        .intro-text h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .intro-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-align: center;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+        }
+
+        .artwork-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 6rem;
+            align-items: start;
+        }
+
+        .artwork-image {
+            position: relative;
+            background: #2a2a2a;
+            border: 1px solid #404040;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .artwork-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .artwork-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .artwork-image img:hover {
+            opacity: 0.9;
+        }
+
+        .artwork-info {
+            padding: 1.5rem 0;
+        }
+
+        .artwork-title {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .artwork-details {
+            font-size: 0.9rem;
+            color: #ccc;
+            letter-spacing: 0.05em;
+        }
+
+        /* Final Section */
+        .final-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .collage {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .collage-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #404040;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .collage-item:hover {
+            transform: scale(1.03);
+        }
+
+        .final-text {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .final-text h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .final-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        /* Modal Window */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            position: relative;
+            margin: 2% auto;
+            width: 90%;
+            max-width: 1200px;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 3rem;
+            color: #fff;
+            cursor: pointer;
+            z-index: 1001;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #ccc;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-button:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .prev { left: 2rem; }
+        .next { right: 2rem; }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #fff, #ccc);
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid #333;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #777;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Loading indicator */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            color: #777;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .introduction {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .intro-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cover-title {
+                font-size: 2rem;
+                letter-spacing: 0.2em;
+            }
+
+            .cover-image {
+                width: 200px;
+                height: 300px;
+            }
+
+            .artwork-pair {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .collage {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-button {
+                font-size: 1.5rem;
+                padding: 0.5rem;
+            }
+
+            .prev { left: 1rem; }
+            .next { right: 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .cover-title {
+                font-size: 1.5rem;
+            }
+            
+            .collage {
+                grid-template-columns: 1fr;
+            }
+            
+            .collage-item {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <!-- Cover Section -->
+    <section class="cover">
+        <div class="cover-image">
+            <img id="cover-img" src="" alt="Resonance of Matter">
+        </div>
+        <h1 class="cover-title">RESONANCE OF MATTER</h1>
+        <p class="cover-subtitle">A COLLECTION OF CONTEMPORARY ABSTRACT WORKS</p>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+        <div class="intro-image">
+            <img id="intro-img" src="" alt="The Art of Texture and Form">
+        </div>
+        <div class="intro-text">
+            <h2>THE ART OF TEXTURE AND FORM</h2>
+            <p>This collection explores the dialogue between materiality and emotion, where texture becomes language and color conveys feeling. Each piece is a physical manifestation of intangible concepts—memory, energy, time, and resonance.</p>
+            <p>The works presented here challenge the traditional boundaries of painting, incorporating mixed media, textural elements, and experimental techniques to create multi-dimensional experiences that evolve with the viewer's perspective.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">THE COLLECTION</h2>
+        <!-- Artwork pairs will be generated by JavaScript -->
+    </section>
+
+    <!-- Final Section -->
+    <section class="final-section">
+        <div class="collage" id="collage">
+            <!-- Collage items will be generated by JavaScript -->
+        </div>
+        <div class="final-text">
+            <h2>BEYOND THE CANVAS</h2>
+            <p>These works transcend their physical boundaries to become integral elements of living spaces. Each painting establishes a unique relationship with its environment, transforming interiors into curated experiences where art and architecture engage in continuous dialogue.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>RESONANCE OF MATTER | ART COLLECTION</p>
+        <p>© 2023 | CONTEMPORARY ABSTRACT ART</p>
+    </footer>
+
+    <!-- Modal Window -->
+    <div class="modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <button class="nav-button prev" onclick="changeImage(-1)">&#10094;</button>
+        <button class="nav-button next" onclick="changeImage(1)">&#10095;</button>
+        <div class="modal-content">
+            <img class="modal-image" id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        // Artwork data with corrected image URLs
+        const artworks = [
+            {
+                painting: 'https://i.ibb.co/XZV69W6p/1.jpg',
+                interior: 'https://i.ibb.co/XkCwTWS9/1-2.jpg',
+                title: 'ENERGY OF SILENCE',
+                details: 'Mixed media on canvas, 120×80 cm'
+            },
+            {
+                painting: 'https://i.ibb.co/MxQSz5Cr/2.jpg',
+                interior: 'https://i.ibb.co/Y4HPMHqz/2-2.jpg',
+                title: 'GRADIENT OF MEMORY',
+                details: 'Acrylic on canvas, 100×100 cm'
+            },
+            {
+                painting: 'https://i.ibb.co/SXymrZPY/3.jpg',
+                interior: 'https://i.ibb.co/XryJKPbZ/3-2.jpg',
+                title: 'ULTRAMARINE DEPTH',
+                details: 'Oil and texture paste on canvas, 150×100 cm'
+            },
+            {
+                painting: 'https://i.ibb.co/CKwcxk4X/4.jpg',
+                interior: 'https://i.ibb.co/nMTr01T9/4-2.jpg',
+                title: 'GOLDEN SOOT',
+                details: 'Mixed media with gold leaf, 140×90 cm'
+            },
+            {
+                painting: 'https://i.ibb.co/1fNh8yGh/5.jpg',
+                interior: 'https://i.ibb.co/1fc2cMwk/5-2.jpg',
+                title: 'WARMTH OF COLD',
+                details: 'Acrylic on canvas, 110×80 cm'
+            },
+            {
+                painting: 'https://i.ibb.co/7J0478jj/6.jpg',
+                interior: 'https://i.ibb.co/1fQhrLMP/6-2.jpg',
+                title: 'RUSTIC SPRING',
+                details: 'Oxides and acrylic on canvas, 130×90 cm'
+            },
+            {
+                painting: 'https://i.ibb.co/bgX4xnT8/7.jpg',
+                interior: 'https://i.ibb.co/n84FPQH7/7-2.jpg',
+                title: 'LIGHT FROM WITHIN',
+                details: 'Fluorescent acrylic on canvas, 120×120 cm'
+            },
+            {
+                painting: 'https://i.ibb.co/NGZq9Yz/8.jpg',
+                interior: 'https://i.ibb.co/99gPyFBj/8-2.jpg',
+                title: 'SANDS OF TIME',
+                details: 'Sand, acrylic, texture gel on canvas, 100×150 cm'
+            },
+            {
+                painting: 'https://i.ibb.co/s4XSjJH/9.jpg',
+                interior: 'https://i.ibb.co/nssTp8tZ/9-2.jpg',
+                title: 'MISTY MORNING',
+                details: 'Acrylic and gesso on canvas, 90×120 cm'
+            },
+            {
+                painting: 'https://i.ibb.co/ZRN8ryJh/10.jpg',
+                interior: 'https://i.ibb.co/ynkdmZWq/10-2.jpg',
+                title: 'LAVA FLOW',
+                details: 'Texture paste and acrylic on canvas, 140×100 cm'
+            },
+            {
+                painting: 'https://i.ibb.co/v4vwQBmY/11.jpg',
+                interior: 'https://i.ibb.co/R42BTq1K/11-2.jpg',
+                title: 'METALLIC WHISPER',
+                details: 'Metallic pigments and acrylic on canvas, 130×90 cm'
+            }
+        ];
+
+        let currentImageIndex = 0;
+        let allImages = [];
+
+        // Function to preload images
+        function preloadImage(url) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => resolve(img);
+                img.onerror = reject;
+                img.src = url;
+            });
+        }
+
+        // Generate gallery
+        async function generateGallery() {
+            const gallery = document.getElementById('gallery');
+            const collage = document.getElementById('collage');
+            
+            // Preload cover and intro images
+            try {
+                const coverImg = await preloadImage(artworks[0].painting);
+                document.getElementById('cover-img').src = coverImg.src;
+                
+                const introImg = await preloadImage(artworks[4].painting);
+                document.getElementById('intro-img').src = introImg.src;
+            } catch (error) {
+                console.error('Error loading cover images:', error);
+            }
+            
+            // Generate artwork pairs
+            for (let i = 0; i < artworks.length; i++) {
+                const artwork = artworks[i];
+                
+                const pair = document.createElement('div');
+                pair.className = 'artwork-pair';
+                
+                // Create painting image with loading handling
+                const paintingImg = document.createElement('img');
+                paintingImg.alt = artwork.title;
+                paintingImg.onclick = () => openModal(i * 2);
+                
+                // Create interior image with loading handling
+                const interiorImg = document.createElement('img');
+                interiorImg.alt = `${artwork.title} in interior`;
+                interiorImg.onclick = () => openModal(i * 2 + 1);
+                
+                // Load images
+                preloadImage(artwork.painting)
+                    .then(img => {
+                        paintingImg.src = img.src;
+                    })
+                    .catch(error => {
+                        console.error(`Error loading painting ${i}:`, error);
+                        paintingImg.alt = 'Image failed to load';
+                    });
+                
+                preloadImage(artwork.interior)
+                    .then(img => {
+                        interiorImg.src = img.src;
+                    })
+                    .catch(error => {
+                        console.error(`Error loading interior ${i}:`, error);
+                        interiorImg.alt = 'Image failed to load';
+                    });
+                
+                pair.innerHTML = `
+                    <div class="artwork-item">
+                        <div class="artwork-image">
+                            <!-- Painting image will be inserted here -->
+                        </div>
+                        <div class="artwork-info">
+                            <h3 class="artwork-title">${artwork.title}</h3>
+                            <p class="artwork-details">${artwork.details}</p>
+                        </div>
+                    </div>
+                    <div class="artwork-item">
+                        <div class="artwork-image">
+                            <!-- Interior image will be inserted here -->
+                        </div>
+                        <div class="artwork-info">
+                            <h3 class="artwork-title">${artwork.title}</h3>
+                            <p class="artwork-details">In interior setting</p>
+                        </div>
+                    </div>
+                `;
+                
+                // Insert the images into their containers
+                pair.querySelector('.artwork-item:first-child .artwork-image').appendChild(paintingImg);
+                pair.querySelector('.artwork-item:last-child .artwork-image').appendChild(interiorImg);
+                
+                gallery.appendChild(pair);
+                
+                // Collect all images for modal
+                allImages.push(artwork.painting, artwork.interior);
+                
+                // Add to collage (first 6 interior images)
+                if (i < 6) {
+                    const collageItem = document.createElement('div');
+                    collageItem.className = 'collage-item';
+                    
+                    const collageImg = document.createElement('img');
+                    collageImg.alt = `${artwork.title} in interior`;
+                    
+                    preloadImage(artwork.interior)
+                        .then(img => {
+                            collageImg.src = img.src;
+                        })
+                        .catch(error => {
+                            console.error(`Error loading collage image ${i}:`, error);
+                        });
+                    
+                    collageItem.appendChild(collageImg);
+                    collage.appendChild(collageItem);
+                }
+            }
+        }
+
+        // Modal functions
+        function openModal(index) {
+            currentImageIndex = index;
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modalImage');
+            
+            // Preload the image before showing modal
+            preloadImage(allImages[currentImageIndex])
+                .then(img => {
+                    modalImage.src = img.src;
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                })
+                .catch(error => {
+                    console.error('Error loading modal image:', error);
+                    modalImage.alt = 'Image failed to load';
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            
+            if (currentImageIndex >= allImages.length) {
+                currentImageIndex = 0;
+            } else if (currentImageIndex < 0) {
+                currentImageIndex = allImages.length - 1;
+            }
+            
+            // Preload the next image
+            preloadImage(allImages[currentImageIndex])
+                .then(img => {
+                    document.getElementById('modalImage').src = img.src;
+                })
+                .catch(error => {
+                    console.error('Error loading next image:', error);
+                    document.getElementById('modalImage').alt = 'Image failed to load';
+                });
+        }
+
+        // Close modal when clicking outside image
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('modal');
+            if (modal.style.display === 'block') {
+                if (event.key === 'Escape') closeModal();
+                if (event.key === 'ArrowLeft') changeImage(-1);
+                if (event.key === 'ArrowRight') changeImage(1);
+            }
+        });
+
+        // Scroll progress bar
+        window.addEventListener('scroll', function() {
+            const winHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset;
+            const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+            document.querySelector('.progress-bar').style.width = scrollPercent + '%';
+        });
+
+        // Smooth scrolling to gallery
+        document.querySelector('.scroll-indicator').addEventListener('click', function() {
+            document.getElementById('gallery').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+
+        // Initialize gallery when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            generateGallery();
+        });
+    </script>
+</body>
+</html>
