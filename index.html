@@ -32,14 +32,12 @@
             padding: 2rem;
         }
 
-        .cover-image {
-            width: 90%;
-            max-width: 800px;
-            height: 500px;
-            background: #1a1a1a;
+        .cover-image-container {
+            width: 90vw;
+            height: 70vh;
+            max-width: 1200px;
+            max-height: 700px;
             margin-bottom: 3rem;
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -47,21 +45,10 @@
             position: relative;
         }
 
-        .cover-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.03) 100%);
-            z-index: 2;
-        }
-
-        .cover-image img {
+        .cover-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             filter: brightness(0.9) contrast(1.1);
         }
 
@@ -421,9 +408,9 @@
                 padding: 3rem 2rem;
             }
             
-            .cover-image {
-                width: 85%;
-                height: 450px;
+            .cover-image-container {
+                width: 95vw;
+                height: 65vh;
             }
         }
 
@@ -453,9 +440,9 @@
                 font-size: 2.5rem;
             }
             
-            .cover-image {
-                width: 90%;
-                height: 400px;
+            .cover-image-container {
+                width: 95vw;
+                height: 60vh;
             }
         }
 
@@ -465,9 +452,9 @@
                 letter-spacing: 0.3em;
             }
 
-            .cover-image {
-                width: 95%;
-                height: 350px;
+            .cover-image-container {
+                width: 98vw;
+                height: 55vh;
             }
 
             .collage {
@@ -492,8 +479,8 @@
                 font-size: 1.8rem;
             }
             
-            .cover-image {
-                height: 300px;
+            .cover-image-container {
+                height: 50vh;
             }
             
             .collage {
@@ -519,8 +506,8 @@
 
     <!-- Cover Section -->
     <section class="cover">
-        <div class="cover-image">
-            <img id="cover-img" src="https://i.ibb.co/HL887cBf/GV.jpg" alt="Sacred Silence Meditation">
+        <div class="cover-image-container">
+            <img class="cover-image" src="https://i.ibb.co/HL887cBf/GV.jpg" alt="Sacred Silence Meditation">
         </div>
         <h1 class="cover-title">SACRED SILENCE</h1>
         <p class="cover-subtitle">ART FOR MEDITATION AND RELAXATION</p>
