@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESONANCE OF MATTER | Art Collection</title>
+    <title>SACRED SILENCE | Meditation Art Collection</title>
     <style>
         * {
             margin: 0;
@@ -12,17 +12,17 @@
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background: #1a1a1a;
-            color: #fff;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #0a0a0a;
+            color: #e8e8e8;
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* Cover Section */
         .cover {
-            height: 100vh;
-            background: linear-gradient(45deg, #0a0a0a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -33,138 +33,171 @@
         }
 
         .cover-image {
-            width: 300px;
-            height: 400px;
-            background: #2a2a2a;
-            margin-bottom: 2rem;
-            border: 2px solid rgba(255,255,255,0.1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 90%;
+            max-width: 800px;
+            height: 500px;
+            background: #1a1a1a;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            position: relative;
+        }
+
+        .cover-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.03) 100%);
+            z-index: 2;
         }
 
         .cover-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            filter: brightness(0.9) contrast(1.1);
         }
 
         .cover-title {
             font-size: 3.5rem;
             font-weight: 300;
-            letter-spacing: 0.3em;
-            margin-bottom: 1rem;
+            letter-spacing: 0.4em;
+            margin-bottom: 1.5rem;
             text-transform: uppercase;
+            color: #f8f8f8;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         .cover-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 300;
-            letter-spacing: 0.2em;
-            opacity: 0.8;
+            letter-spacing: 0.3em;
             margin-bottom: 2rem;
+            color: #b8b8b8;
+            font-style: italic;
         }
 
         .scroll-indicator {
             position: absolute;
-            bottom: 2rem;
-            animation: bounce 2s infinite;
-            font-size: 1.5rem;
+            bottom: 3rem;
+            animation: float 3s ease-in-out infinite;
+            font-size: 1.8rem;
             cursor: pointer;
+            color: #888;
+            transition: color 0.3s ease;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+        .scroll-indicator:hover {
+            color: #fff;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         /* Introduction Section */
         .introduction {
-            max-width: 1200px;
+            min-height: 100vh;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 6rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            padding: 4rem 2rem;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            gap: 5rem;
         }
 
         .intro-image {
-            width: 100%;
+            flex: 1;
+            max-width: 600px;
             height: 500px;
-            background: #2a2a2a;
-            border: 1px solid #404040;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
         .intro-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            filter: brightness(0.85) contrast(1.1);
         }
 
         .intro-text {
+            flex: 1;
+            max-width: 600px;
             padding: 2rem;
         }
 
         .intro-text h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 300;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.5rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 2.5rem;
             text-transform: uppercase;
+            color: #f0f0f0;
+            line-height: 1.3;
         }
 
         .intro-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #ccc;
-            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
         }
 
         /* Gallery Section */
         .gallery {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 6rem 2rem;
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 300;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.3em;
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
             text-transform: uppercase;
+            color: #f0f0f0;
         }
 
         .artwork-pair {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 6rem;
+            gap: 4rem;
+            margin-bottom: 8rem;
             align-items: start;
         }
 
         .artwork-image {
             position: relative;
-            background: #2a2a2a;
-            border: 1px solid #404040;
-            transition: transform 0.3s ease;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            transition: all 0.5s ease;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
 
         .artwork-image:hover {
-            transform: translateY(-5px);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
 
         .artwork-image img {
@@ -172,29 +205,34 @@
             height: auto;
             display: block;
             cursor: pointer;
-            transition: opacity 0.3s ease;
+            transition: transform 0.5s ease;
+            filter: brightness(0.9);
         }
 
-        .artwork-image img:hover {
-            opacity: 0.9;
+        .artwork-image:hover img {
+            transform: scale(1.05);
+            filter: brightness(1);
         }
 
         .artwork-info {
-            padding: 1.5rem 0;
+            padding: 2rem 0;
+            text-align: center;
         }
 
         .artwork-title {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 300;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
+            color: #f0f0f0;
         }
 
         .artwork-details {
-            font-size: 0.9rem;
-            color: #ccc;
+            font-size: 1.1rem;
+            color: #888;
             letter-spacing: 0.05em;
+            line-height: 1.6;
         }
 
         /* Final Section */
@@ -208,49 +246,56 @@
         .collage {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-bottom: 3rem;
+            gap: 1.5rem;
+            margin-bottom: 5rem;
         }
 
         .collage-item {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border: 1px solid #404040;
-            transition: transform 0.3s ease;
+            height: 250px;
+            border: 1px solid #2a2a2a;
+            transition: all 0.4s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            position: relative;
         }
 
         .collage-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.4s ease;
+            filter: brightness(0.8);
         }
 
         .collage-item:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
+        }
+
+        .collage-item:hover img {
+            transform: scale(1.1);
+            filter: brightness(1);
         }
 
         .final-text {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .final-text h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 300;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.5rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 2.5rem;
             text-transform: uppercase;
+            color: #f0f0f0;
         }
 
         .final-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #ccc;
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: #b0b0b0;
         }
 
         /* Modal Window */
@@ -262,8 +307,8 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.95);
-            animation: fadeIn 0.3s ease;
+            background: rgba(5,5,5,0.98);
+            animation: fadeIn 0.4s ease;
         }
 
         @keyframes fadeIn {
@@ -273,10 +318,10 @@
 
         .modal-content {
             position: relative;
-            margin: 2% auto;
-            width: 90%;
-            max-width: 1200px;
-            height: 90vh;
+            margin: auto;
+            width: 95%;
+            max-width: 1400px;
+            height: 95vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -286,43 +331,61 @@
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
+            animation: zoomIn 0.5s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
 
         .close {
             position: absolute;
-            top: 2rem;
-            right: 2rem;
-            font-size: 3rem;
+            top: 3rem;
+            right: 3rem;
+            font-size: 3.5rem;
             color: #fff;
             cursor: pointer;
             z-index: 1001;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            background: rgba(0,0,0,0.3);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .close:hover {
             color: #ccc;
+            background: rgba(0,0,0,0.6);
+            transform: rotate(90deg);
         }
 
         .nav-button {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255,255,255,0.1);
-            border: none;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
             color: white;
-            font-size: 2rem;
-            padding: 1rem;
+            font-size: 2.5rem;
+            padding: 1.5rem;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
             backdrop-filter: blur(10px);
+            border-radius: 8px;
         }
 
         .nav-button:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-50%) scale(1.1);
         }
 
-        .prev { left: 2rem; }
-        .next { right: 2rem; }
+        .prev { left: 3rem; }
+        .next { right: 3rem; }
 
         /* Progress Bar */
         .progress-bar {
@@ -331,43 +394,67 @@
             left: 0;
             width: 0%;
             height: 3px;
-            background: linear-gradient(90deg, #fff, #ccc);
+            background: linear-gradient(90deg, #8b7355, #c0a080);
             z-index: 1000;
             transition: width 0.1s ease;
         }
 
         /* Footer */
         .footer {
-            border-top: 1px solid #333;
-            padding: 3rem 2rem;
+            border-top: 1px solid #222;
+            padding: 4rem 2rem;
             text-align: center;
-            color: #777;
+            color: #666;
+            background: #0a0a0a;
         }
 
         .footer p {
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-        }
-
-        /* Loading indicator */
-        .loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            color: #777;
-            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
+        @media (max-width: 1200px) {
             .introduction {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 3rem;
+                padding: 3rem 2rem;
+            }
+            
+            .cover-image {
+                width: 85%;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .introduction {
+                flex-direction: column;
+                min-height: auto;
+                padding: 4rem 2rem;
+            }
+            
+            .intro-image, .intro-text {
+                max-width: 100%;
+                width: 100%;
             }
             
             .intro-image {
+                height: 400px;
+                margin-bottom: 2rem;
+            }
+            
+            .artwork-pair {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .cover-title {
+                font-size: 2.5rem;
+            }
+            
+            .cover-image {
+                width: 90%;
                 height: 400px;
             }
         }
@@ -375,17 +462,12 @@
         @media (max-width: 768px) {
             .cover-title {
                 font-size: 2rem;
-                letter-spacing: 0.2em;
+                letter-spacing: 0.3em;
             }
 
             .cover-image {
-                width: 200px;
-                height: 300px;
-            }
-
-            .artwork-pair {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+                width: 95%;
+                height: 350px;
             }
 
             .collage {
@@ -393,17 +475,25 @@
             }
 
             .nav-button {
-                font-size: 1.5rem;
-                padding: 0.5rem;
+                font-size: 2rem;
+                padding: 1rem;
             }
 
-            .prev { left: 1rem; }
-            .next { right: 1rem; }
+            .prev { left: 1.5rem; }
+            .next { right: 1.5rem; }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
         }
 
         @media (max-width: 480px) {
             .cover-title {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+            }
+            
+            .cover-image {
+                height: 300px;
             }
             
             .collage {
@@ -411,7 +501,15 @@
             }
             
             .collage-item {
-                height: 150px;
+                height: 200px;
+            }
+            
+            .intro-text h2 {
+                font-size: 2rem;
+            }
+            
+            .intro-text p {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -422,28 +520,29 @@
     <!-- Cover Section -->
     <section class="cover">
         <div class="cover-image">
-            <img id="cover-img" src="" alt="Resonance of Matter">
+            <img id="cover-img" src="https://i.ibb.co/HL887cBf/GV.jpg" alt="Sacred Silence Meditation">
         </div>
-        <h1 class="cover-title">RESONANCE OF MATTER</h1>
-        <p class="cover-subtitle">A COLLECTION OF CONTEMPORARY ABSTRACT WORKS</p>
-        <div class="scroll-indicator">↓</div>
+        <h1 class="cover-title">SACRED SILENCE</h1>
+        <p class="cover-subtitle">ART FOR MEDITATION AND RELAXATION</p>
+        <div class="scroll-indicator">⌄</div>
     </section>
 
     <!-- Introduction Section -->
     <section class="introduction">
         <div class="intro-image">
-            <img id="intro-img" src="" alt="The Art of Texture and Form">
+            <img id="intro-img" src="" alt="Meditative Art">
         </div>
         <div class="intro-text">
-            <h2>THE ART OF TEXTURE AND FORM</h2>
-            <p>This collection explores the dialogue between materiality and emotion, where texture becomes language and color conveys feeling. Each piece is a physical manifestation of intangible concepts—memory, energy, time, and resonance.</p>
-            <p>The works presented here challenge the traditional boundaries of painting, incorporating mixed media, textural elements, and experimental techniques to create multi-dimensional experiences that evolve with the viewer's perspective.</p>
+            <h2>FIND YOUR INNER PEACE</h2>
+            <p>This collection brings together calming artworks and peaceful spaces to help you relax and meditate. Each image is chosen to quiet the mind and bring a sense of peace.</p>
+            <p>Whether you're new to meditation or have practiced for years, these visual guides can help you find stillness. Use them for personal reflection or group meditation sessions.</p>
+            <p>Simply let your eyes rest on the images. Breathe deeply, and allow the colors and shapes to help you relax and find your center.</p>
         </div>
     </section>
 
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
-        <h2 class="section-title">THE COLLECTION</h2>
+        <h2 class="section-title">MEDITATION GUIDES</h2>
         <!-- Artwork pairs will be generated by JavaScript -->
     </section>
 
@@ -453,95 +552,163 @@
             <!-- Collage items will be generated by JavaScript -->
         </div>
         <div class="final-text">
-            <h2>BEYOND THE CANVAS</h2>
-            <p>These works transcend their physical boundaries to become integral elements of living spaces. Each painting establishes a unique relationship with its environment, transforming interiors into curated experiences where art and architecture engage in continuous dialogue.</p>
+            <h2>EASY WAYS TO USE THESE IMAGES</h2>
+            <p>Choose any image that feels calming to you. Sit comfortably and look at it softly. Let your breathing become slow and steady.</p>
+            <p>You can use these images for short breaks during your day, or for longer meditation sessions. They work well for both individual practice and group meditation.</p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>RESONANCE OF MATTER | ART COLLECTION</p>
-        <p>© 2023 | CONTEMPORARY ABSTRACT ART</p>
+        <p>SACRED SILENCE | MEDITATION ART COLLECTION</p>
+        <p>FOR PERSONAL AND GROUP MEDITATION PRACTICE</p>
+        <p>© 2023 | VISUAL AIDS FOR RELAXATION AND MINDFULNESS</p>
     </footer>
 
     <!-- Modal Window -->
     <div class="modal" id="modal">
         <span class="close" onclick="closeModal()">&times;</span>
-        <button class="nav-button prev" onclick="changeImage(-1)">&#10094;</button>
-        <button class="nav-button next" onclick="changeImage(1)">&#10095;</button>
+        <button class="nav-button prev" onclick="changeImage(-1)">‹</button>
+        <button class="nav-button next" onclick="changeImage(1)">›</button>
         <div class="modal-content">
             <img class="modal-image" id="modalImage" src="" alt="">
         </div>
     </div>
 
     <script>
-        // Artwork data with corrected image URLs
+        // Combined meditation artwork data with simple descriptions
         const artworks = [
             {
-                painting: 'https://i.ibb.co/XZV69W6p/1.jpg',
-                interior: 'https://i.ibb.co/XkCwTWS9/1-2.jpg',
-                title: 'ENERGY OF SILENCE',
-                details: 'Mixed media on canvas, 120×80 cm'
+                meditation: 'https://i.ibb.co/XZV69W6p/1.jpg',
+                context: 'https://i.ibb.co/XkCwTWS9/1-2.jpg',
+                title: 'CALM BREATHING',
+                details: 'Soft colors to help you breathe slowly and deeply'
             },
             {
-                painting: 'https://i.ibb.co/MxQSz5Cr/2.jpg',
-                interior: 'https://i.ibb.co/Y4HPMHqz/2-2.jpg',
-                title: 'GRADIENT OF MEMORY',
-                details: 'Acrylic on canvas, 100×100 cm'
+                meditation: 'https://i.ibb.co/7x736pZW/1.jpg',
+                context: 'https://i.ibb.co/HLWsNqtJ/1-1.jpg',
+                title: 'PEACEFUL SPACE',
+                details: 'Open areas for your mind to relax and expand'
             },
             {
-                painting: 'https://i.ibb.co/SXymrZPY/3.jpg',
-                interior: 'https://i.ibb.co/XryJKPbZ/3-2.jpg',
-                title: 'ULTRAMARINE DEPTH',
-                details: 'Oil and texture paste on canvas, 150×100 cm'
+                meditation: 'https://i.ibb.co/MxQSz5Cr/2.jpg',
+                context: 'https://i.ibb.co/Y4HPMHqz/2-2.jpg',
+                title: 'DEEP RELAXATION',
+                details: 'Rich textures to help you release tension'
             },
             {
-                painting: 'https://i.ibb.co/CKwcxk4X/4.jpg',
-                interior: 'https://i.ibb.co/nMTr01T9/4-2.jpg',
-                title: 'GOLDEN SOOT',
-                details: 'Mixed media with gold leaf, 140×90 cm'
+                meditation: 'https://i.ibb.co/9m0RTDgY/2.jpg',
+                context: 'https://i.ibb.co/TDy542xJ/2-1.jpg',
+                title: 'FOCUS AND CALM',
+                details: 'Clear shapes to help concentrate your attention'
             },
             {
-                painting: 'https://i.ibb.co/1fNh8yGh/5.jpg',
-                interior: 'https://i.ibb.co/1fc2cMwk/5-2.jpg',
-                title: 'WARMTH OF COLD',
-                details: 'Acrylic on canvas, 110×80 cm'
+                meditation: 'https://i.ibb.co/SXymrZPY/3.jpg',
+                context: 'https://i.ibb.co/XryJKPbZ/3-2.jpg',
+                title: 'FLOWING THOUGHTS',
+                details: 'Gentle movements to let thoughts pass easily'
             },
             {
-                painting: 'https://i.ibb.co/7J0478jj/6.jpg',
-                interior: 'https://i.ibb.co/1fQhrLMP/6-2.jpg',
-                title: 'RUSTIC SPRING',
-                details: 'Oxides and acrylic on canvas, 130×90 cm'
+                meditation: 'https://i.ibb.co/23H8GHqG/3.jpg',
+                context: 'https://i.ibb.co/zpHRXQr/3-1.jpg',
+                title: 'BRIGHT AWARENESS',
+                details: 'Light colors to bring clarity to your mind'
             },
             {
-                painting: 'https://i.ibb.co/bgX4xnT8/7.jpg',
-                interior: 'https://i.ibb.co/n84FPQH7/7-2.jpg',
-                title: 'LIGHT FROM WITHIN',
-                details: 'Fluorescent acrylic on canvas, 120×120 cm'
+                meditation: 'https://i.ibb.co/CKwcxk4X/4.jpg',
+                context: 'https://i.ibb.co/nMTr01T9/4-2.jpg',
+                title: 'WARM COMFORT',
+                details: 'Golden tones to create feelings of safety'
             },
             {
-                painting: 'https://i.ibb.co/NGZq9Yz/8.jpg',
-                interior: 'https://i.ibb.co/99gPyFBj/8-2.jpg',
-                title: 'SANDS OF TIME',
-                details: 'Sand, acrylic, texture gel on canvas, 100×150 cm'
+                meditation: 'https://i.ibb.co/q39V4Q69/4.jpg',
+                context: 'https://i.ibb.co/nNqb6d1L/4-1.jpg',
+                title: 'BALANCED MIND',
+                details: 'Symmetrical patterns to bring mental balance'
             },
             {
-                painting: 'https://i.ibb.co/s4XSjJH/9.jpg',
-                interior: 'https://i.ibb.co/nssTp8tZ/9-2.jpg',
-                title: 'MISTY MORNING',
-                details: 'Acrylic and gesso on canvas, 90×120 cm'
+                meditation: 'https://i.ibb.co/1fNh8yGh/5.jpg',
+                context: 'https://i.ibb.co/1fc2cMwk/5-2.jpg',
+                title: 'GENTLE TRANSITIONS',
+                details: 'Soft changes between colors for smooth meditation'
             },
             {
-                painting: 'https://i.ibb.co/ZRN8ryJh/10.jpg',
-                interior: 'https://i.ibb.co/ynkdmZWq/10-2.jpg',
-                title: 'LAVA FLOW',
-                details: 'Texture paste and acrylic on canvas, 140×100 cm'
+                meditation: 'https://i.ibb.co/V0LDzJNr/5.jpg',
+                context: 'https://i.ibb.co/xtNMwSyf/5-1.jpg',
+                title: 'CLEAR PATH',
+                details: 'Straight lines to guide your focus'
             },
             {
-                painting: 'https://i.ibb.co/v4vwQBmY/11.jpg',
-                interior: 'https://i.ibb.co/R42BTq1K/11-2.jpg',
-                title: 'METALLIC WHISPER',
-                details: 'Metallic pigments and acrylic on canvas, 130×90 cm'
+                meditation: 'https://i.ibb.co/7J0478jj/6.jpg',
+                context: 'https://i.ibb.co/1fQhrLMP/6-2.jpg',
+                title: 'GROUNDING ENERGY',
+                details: 'Earth tones to help you feel stable and secure'
+            },
+            {
+                meditation: 'https://i.ibb.co/rRFtwSvb/7.jpg',
+                context: 'https://i.ibb.co/wZ6M7xsc/7-1.jpg',
+                title: 'QUIET SHADOWS',
+                details: 'Soft contrasts for peaceful contemplation'
+            },
+            {
+                meditation: 'https://i.ibb.co/bgX4xnT8/7.jpg',
+                context: 'https://i.ibb.co/n84FPQH7/7-2.jpg',
+                title: 'INNER LIGHT',
+                details: 'Bright centers to focus your awareness'
+            },
+            {
+                meditation: 'https://i.ibb.co/Lh94bjd1/8.jpg',
+                context: 'https://i.ibb.co/Sw5Tvv3K/8-1.jpg',
+                title: 'STEADY RHYTHM',
+                details: 'Repeating patterns for consistent breathing'
+            },
+            {
+                meditation: 'https://i.ibb.co/NGZq9Yz/8.jpg',
+                context: 'https://i.ibb.co/99gPyFBj/8-2.jpg',
+                title: 'CHANGING MOMENTS',
+                details: 'Evolving textures to observe passing thoughts'
+            },
+            {
+                meditation: 'https://i.ibb.co/JWxPdnpd/9.jpg',
+                context: 'https://i.ibb.co/zVxDzK5B/9-1.jpg',
+                title: 'OPEN SKY MIND',
+                details: 'Expansive views for unlimited awareness'
+            },
+            {
+                meditation: 'https://i.ibb.co/s4XSjJH/9.jpg',
+                context: 'https://i.ibb.co/nssTp8tZ/9-2.jpg',
+                title: 'SOFT FOCUS',
+                details: 'Gentle blur to relax your eyes and mind'
+            },
+            {
+                meditation: 'https://i.ibb.co/ZRgnk5t1/10.jpg',
+                context: 'https://i.ibb.co/qM9PKfsG/10-1.jpg',
+                title: 'CLEAR STRUCTURE',
+                details: 'Organized patterns for mental clarity'
+            },
+            {
+                meditation: 'https://i.ibb.co/ZRN8ryJh/10.jpg',
+                context: 'https://i.ibb.co/ynkdmZWq/10-2.jpg',
+                title: 'ENERGY FLOW',
+                details: 'Dynamic movements for releasing stress'
+            },
+            {
+                meditation: 'https://i.ibb.co/Q73MLbtp/11.jpg',
+                context: 'https://i.ibb.co/PvjMYvks/11-1.jpg',
+                title: 'MIND PATTERNS',
+                details: 'Complex designs to explore your thoughts'
+            },
+            {
+                meditation: 'https://i.ibb.co/v4vwQBmY/11.jpg',
+                context: 'https://i.ibb.co/R42BTq1K/11-2.jpg',
+                title: 'QUIET ATTENTION',
+                details: 'Subtle details for gentle awareness'
+            },
+            {
+                meditation: 'https://i.ibb.co/gQM2SLr/12.jpg',
+                context: 'https://i.ibb.co/nM5s3z0T/12-1.jpg',
+                title: 'CONTINUOUS AWARENESS',
+                details: 'Flowing lines for ongoing mindfulness'
             }
         ];
 
@@ -553,7 +720,12 @@
             return new Promise((resolve, reject) => {
                 const img = new Image();
                 img.onload = () => resolve(img);
-                img.onerror = reject;
+                img.onerror = () => {
+                    console.warn(`Failed to load image: ${url}`);
+                    const placeholder = new Image();
+                    placeholder.alt = 'Image not available';
+                    resolve(placeholder);
+                };
                 img.src = url;
             });
         }
@@ -563,15 +735,16 @@
             const gallery = document.getElementById('gallery');
             const collage = document.getElementById('collage');
             
-            // Preload cover and intro images
+            // Clear existing content
+            gallery.innerHTML = '<h2 class="section-title">MEDITATION GUIDES</h2>';
+            collage.innerHTML = '';
+            
+            // Preload intro image
             try {
-                const coverImg = await preloadImage(artworks[0].painting);
-                document.getElementById('cover-img').src = coverImg.src;
-                
-                const introImg = await preloadImage(artworks[4].painting);
+                const introImg = await preloadImage(artworks[5].meditation);
                 document.getElementById('intro-img').src = introImg.src;
             } catch (error) {
-                console.error('Error loading cover images:', error);
+                console.error('Error loading intro image:', error);
             }
             
             // Generate artwork pairs
@@ -581,39 +754,24 @@
                 const pair = document.createElement('div');
                 pair.className = 'artwork-pair';
                 
-                // Create painting image with loading handling
-                const paintingImg = document.createElement('img');
-                paintingImg.alt = artwork.title;
-                paintingImg.onclick = () => openModal(i * 2);
+                // Create meditation image
+                const meditationImg = document.createElement('img');
+                meditationImg.alt = artwork.title;
+                meditationImg.onclick = () => openModal(i * 2);
                 
-                // Create interior image with loading handling
-                const interiorImg = document.createElement('img');
-                interiorImg.alt = `${artwork.title} in interior`;
-                interiorImg.onclick = () => openModal(i * 2 + 1);
+                // Create context image
+                const contextImg = document.createElement('img');
+                contextImg.alt = `${artwork.title} in practice`;
+                contextImg.onclick = () => openModal(i * 2 + 1);
                 
                 // Load images
-                preloadImage(artwork.painting)
-                    .then(img => {
-                        paintingImg.src = img.src;
-                    })
-                    .catch(error => {
-                        console.error(`Error loading painting ${i}:`, error);
-                        paintingImg.alt = 'Image failed to load';
-                    });
-                
-                preloadImage(artwork.interior)
-                    .then(img => {
-                        interiorImg.src = img.src;
-                    })
-                    .catch(error => {
-                        console.error(`Error loading interior ${i}:`, error);
-                        interiorImg.alt = 'Image failed to load';
-                    });
+                preloadImage(artwork.meditation).then(img => { meditationImg.src = img.src; });
+                preloadImage(artwork.context).then(img => { contextImg.src = img.src; });
                 
                 pair.innerHTML = `
                     <div class="artwork-item">
                         <div class="artwork-image">
-                            <!-- Painting image will be inserted here -->
+                            <!-- Meditation image will be inserted here -->
                         </div>
                         <div class="artwork-info">
                             <h3 class="artwork-title">${artwork.title}</h3>
@@ -622,39 +780,33 @@
                     </div>
                     <div class="artwork-item">
                         <div class="artwork-image">
-                            <!-- Interior image will be inserted here -->
+                            <!-- Context image will be inserted here -->
                         </div>
                         <div class="artwork-info">
                             <h3 class="artwork-title">${artwork.title}</h3>
-                            <p class="artwork-details">In interior setting</p>
+                            <p class="artwork-details">In meditation space</p>
                         </div>
                     </div>
                 `;
                 
-                // Insert the images into their containers
-                pair.querySelector('.artwork-item:first-child .artwork-image').appendChild(paintingImg);
-                pair.querySelector('.artwork-item:last-child .artwork-image').appendChild(interiorImg);
+                // Insert images
+                pair.querySelector('.artwork-item:first-child .artwork-image').appendChild(meditationImg);
+                pair.querySelector('.artwork-item:last-child .artwork-image').appendChild(contextImg);
                 
                 gallery.appendChild(pair);
                 
                 // Collect all images for modal
-                allImages.push(artwork.painting, artwork.interior);
+                allImages.push(artwork.meditation, artwork.context);
                 
-                // Add to collage (first 6 interior images)
+                // Add to collage (first 6 context images)
                 if (i < 6) {
                     const collageItem = document.createElement('div');
                     collageItem.className = 'collage-item';
                     
                     const collageImg = document.createElement('img');
-                    collageImg.alt = `${artwork.title} in interior`;
+                    collageImg.alt = `${artwork.title} in practice`;
                     
-                    preloadImage(artwork.interior)
-                        .then(img => {
-                            collageImg.src = img.src;
-                        })
-                        .catch(error => {
-                            console.error(`Error loading collage image ${i}:`, error);
-                        });
+                    preloadImage(artwork.context).then(img => { collageImg.src = img.src; });
                     
                     collageItem.appendChild(collageImg);
                     collage.appendChild(collageItem);
@@ -668,19 +820,11 @@
             const modal = document.getElementById('modal');
             const modalImage = document.getElementById('modalImage');
             
-            // Preload the image before showing modal
-            preloadImage(allImages[currentImageIndex])
-                .then(img => {
-                    modalImage.src = img.src;
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                })
-                .catch(error => {
-                    console.error('Error loading modal image:', error);
-                    modalImage.alt = 'Image failed to load';
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                });
+            preloadImage(allImages[currentImageIndex]).then(img => {
+                modalImage.src = img.src;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
         }
 
         function closeModal() {
@@ -698,15 +842,9 @@
                 currentImageIndex = allImages.length - 1;
             }
             
-            // Preload the next image
-            preloadImage(allImages[currentImageIndex])
-                .then(img => {
-                    document.getElementById('modalImage').src = img.src;
-                })
-                .catch(error => {
-                    console.error('Error loading next image:', error);
-                    document.getElementById('modalImage').alt = 'Image failed to load';
-                });
+            preloadImage(allImages[currentImageIndex]).then(img => {
+                document.getElementById('modalImage').src = img.src;
+            });
         }
 
         // Close modal when clicking outside image
